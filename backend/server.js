@@ -71,7 +71,7 @@ app.get('/api/user/:name', async (req, res) => {
 
 });
 
-mongoose.connect(url);
+mongoose.connect(url, { useNewUrlParser: true });
 
 app.listen(port, () => {
   console.log(`Server started on port:${port}. Go to http://localhost:${port}`);
