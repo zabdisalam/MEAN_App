@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ɵɵcontainerRefreshEnd } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -21,5 +21,9 @@ export class AppComponent {
   post() {
     console.log('post', this.message);
     this.http.post('http://localhost:3000/api/message', {msg: this.message, userName: this.userName}).toPromise();
+      function refresh(): void {
+        window.location.reload();
+    }
+    refresh();
   }
 }
